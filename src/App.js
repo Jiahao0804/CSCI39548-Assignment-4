@@ -62,13 +62,44 @@ class App extends Component {
   // get data from API
   async componentDidMount()
   {
-    let credits = await axios.get("https://johnnylaicode.github.io/api/credits.json");
-    let debits = await axios.get("https://johnnylaicode.github.io/api/debits.json");
+    //let credits = await axios.get("https://johnnylaicode.github.io/api/credits.json");
+    //let debits = await axios.get("https://johnnylaicode.github.io/api/debits.json");
 
-    credits = credits.data;
-    debits = debits.data;
+    try {
+      const creditsResponse = await fetch("https://johnnylaicode.github.io/api/credits.json");
+      const credits = await creditsResponse.json();
+      this.setState( { creditList: credits });
 
-    let total_credits = 0;
+      const debitsResponse = await fetch("https://johnnylaicode.github.io/api/debits.json");
+      const debits = await debitsResponse.json();
+      this.setState( { debitList: debits });
+
+      const credits = this.state.creditList;
+      const debits = this.state.debitList;
+
+      let total_credits = 0;
+      let total_debits = 0;
+
+      credits.forEach((credit) => {
+        total_credits = total_credits + credit.amount;
+      });
+
+      debits.forEach((debits) => {
+        total_debits = total_debits + debits.amount;
+      });
+
+      const Update_account_balance = (total_credits - total_debits).toFixed(2);
+
+      this.setState( { accountBalance: Update_account_balance });
+
+    }catch(error) {
+      console.error(error);
+    } 
+    
+    // credits = credits.data;
+    // debits = debits.data;
+
+    /* let total_credits = 0;
     let total_debits = 0;
 
     credits.forEach((credit) => {
@@ -82,6 +113,7 @@ class App extends Component {
     let Update_account_balance = (total_credits - total_debits).toFixed(2);
 
     this.setState({accountBalance: Update_account_balance});
+    */
   }
 
   // Create Routes and React elements to be rendered using React components
