@@ -16,6 +16,7 @@ Utilizing built-in React Router components (Route, Router, Link, and Redirect)
 Working with common React features such as components, state, props, event handlers, etc.
 <br>
 
+
 Client-Side Routing
 <br>
 On the server, routing (i.e., server-side routing) generally refers to the way we define the URLs and RESTful resources that make up our application. Whether we are retrieving data from the database or storing data, our server needs to know where the data lives. Server-side routes can help us keep track of this information.
@@ -23,6 +24,7 @@ On the server, routing (i.e., server-side routing) generally refers to the way w
 
 On the client, i.e., in the web browser, things are a little different. When we build a Single-Page Application (SPA) using React, we create only a single HTML page (index.html) to render data inside of the web browser. Client-side routing is the technique used to give users the impression of navigating between multiple web pages, by fetching different data from the server and rendering different views in the same single HTML page. This process is done on the client using JavaScript. Client-side routing is how we describe which views are displayed on the web page at any given time.
 <br>
+
 
 React Router
 <br>
@@ -38,16 +40,22 @@ To demonstrate the power of React Router and client-side routing, we are going t
 <br>
 The bank website consists of the following web page views that render different data:
 <br>
+
 Home
 User Profile
 Login
 Credits
 Debits
+
 We are going to implement client-side routing to display different web page views. When users visit the bank website, they will be greeted by the Home page view. From there, they can navigate to different web page views; e.g., User Profile, Login, Credits, Debits, and of course Home.
 <br>
+
 Purpose
+<br>
+
 In the following sections, we will build out parts of the Bank of React application, such as Home, User Profile, and Login page views. During the process, we will discuss some key features of React and create components that can be applied in Assignment 4.
 <br>
+
 In Assignment 4, you will implement the Credits and Debits page views.
 <br>
 
