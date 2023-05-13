@@ -1,7 +1,7 @@
 Github username: Jiahao0804
 <br>
 
-Link to the GitHub repository: 
+Link to the GitHub repository: https://github.com/Jiahao0804/CSCI39548-Assignment-4
 <br>
 
 Link to the GitHub Pages website: 
@@ -41,11 +41,13 @@ Although the basic React library doesn't have the capability to handle client-si
 
 React Router allows us to use familiar routing patterns instead of writing complicated if-statements in JavaScript.
 <br>
+<br>
 
 Implementing Client-Side Routing
 "Bank of React" Application
 To demonstrate the power of React Router and client-side routing, we are going to build a simple personal banking application called Bank of React, where we can independently display the Credits and Debits made to each bank account.
 <br>
+
 The bank website consists of the following web page views that render different data:
 <br>
 
@@ -54,9 +56,12 @@ User Profile
 Login
 Credits
 Debits
+<br>
 
 We are going to implement client-side routing to display different web page views. When users visit the bank website, they will be greeted by the Home page view. From there, they can navigate to different web page views; e.g., User Profile, Login, Credits, Debits, and of course Home.
 <br>
+<br>
+
 
 Purpose
 <br>
