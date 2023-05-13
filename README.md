@@ -1,3 +1,46 @@
+Github username: Jiahao0804
+Link to the GitHub repository: 
+Link to the GitHub Pages website: 
+
+GOAL
+The goal is to offer students the opportunity to gain experience in React application development by:
+<br>
+Learning about client-side routing
+Adding client-side routing to React applications using React Router
+Setting up React Router to enable common browser behavior
+Utilizing built-in React Router components (Route, Router, Link, and Redirect)
+Working with common React features such as components, state, props, event handlers, etc.
+<br>
+Client-Side Routing
+On the server, routing (i.e., server-side routing) generally refers to the way we define the URLs and RESTful resources that make up our application. Whether we are retrieving data from the database or storing data, our server needs to know where the data lives. Server-side routes can help us keep track of this information.
+<br>
+On the client, i.e., in the web browser, things are a little different. When we build a Single-Page Application (SPA) using React, we create only a single HTML page (index.html) to render data inside of the web browser. Client-side routing is the technique used to give users the impression of navigating between multiple web pages, by fetching different data from the server and rendering different views in the same single HTML page. This process is done on the client using JavaScript. Client-side routing is how we describe which views are displayed on the web page at any given time.
+<br>
+React Router
+Although the basic React library doesn't have the capability to handle client-side routing, there are other libraries available to handle this specific task. The most popular library for client-side routing is called React Router. Checkout the official documentation.
+<br>
+React Router allows us to use familiar routing patterns instead of writing complicated if-statements in JavaScript.
+<br>
+Implementing Client-Side Routing
+"Bank of React" Application
+To demonstrate the power of React Router and client-side routing, we are going to build a simple personal banking application called Bank of React, where we can independently display the Credits and Debits made to each bank account.
+<br>
+The bank website consists of the following web page views that render different data:
+<br>
+Home
+User Profile
+Login
+Credits
+Debits
+We are going to implement client-side routing to display different web page views. When users visit the bank website, they will be greeted by the Home page view. From there, they can navigate to different web page views; e.g., User Profile, Login, Credits, Debits, and of course Home.
+<br>
+Purpose
+In the following sections, we will build out parts of the Bank of React application, such as Home, User Profile, and Login page views. During the process, we will discuss some key features of React and create components that can be applied in Assignment 4.
+<br>
+In Assignment 4, you will implement the Credits and Debits page views.
+<br>
+
+
 # bank-of-react-example-code-gh-pages
 This repository is the starter code for Assignment 4 - Bank of React.
 
