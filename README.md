@@ -1,8 +1,15 @@
 Github username: Jiahao0804
+<br>
+
 Link to the GitHub repository: 
+<br>
+
 Link to the GitHub Pages website: 
+<br>
+
 
 GOAL
+<br>
 The goal is to offer students the opportunity to gain experience in React application development by:
 
 Learning about client-side routing
