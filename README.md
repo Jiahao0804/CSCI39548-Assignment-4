@@ -6,7 +6,7 @@ Link to the GitHub repository:
 
 Link to the GitHub Pages website: 
 <br>
-
+<br>
 
 GOAL
 <br>
@@ -22,7 +22,7 @@ Utilizing built-in React Router components (Route, Router, Link, and Redirect)
 <br>
 Working with common React features such as components, state, props, event handlers, etc.
 <br>
-
+<br>
 
 Client-Side Routing
 <br>
@@ -30,6 +30,7 @@ On the server, routing (i.e., server-side routing) generally refers to the way w
 <br>
 
 On the client, i.e., in the web browser, things are a little different. When we build a Single-Page Application (SPA) using React, we create only a single HTML page (index.html) to render data inside of the web browser. Client-side routing is the technique used to give users the impression of navigating between multiple web pages, by fetching different data from the server and rendering different views in the same single HTML page. This process is done on the client using JavaScript. Client-side routing is how we describe which views are displayed on the web page at any given time.
+<br>
 <br>
 
 
