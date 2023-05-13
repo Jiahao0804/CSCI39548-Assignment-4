@@ -4,27 +4,34 @@ Link to the GitHub Pages website:
 
 GOAL
 The goal is to offer students the opportunity to gain experience in React application development by:
-<br>
+
 Learning about client-side routing
-
+<br>
 Adding client-side routing to React applications using React Router
-
+<br>
 Setting up React Router to enable common browser behavior
-
+<br>
 Utilizing built-in React Router components (Route, Router, Link, and Redirect)
-
+<br>
 Working with common React features such as components, state, props, event handlers, etc.
 <br>
+
 Client-Side Routing
+<br>
 On the server, routing (i.e., server-side routing) generally refers to the way we define the URLs and RESTful resources that make up our application. Whether we are retrieving data from the database or storing data, our server needs to know where the data lives. Server-side routes can help us keep track of this information.
 <br>
+
 On the client, i.e., in the web browser, things are a little different. When we build a Single-Page Application (SPA) using React, we create only a single HTML page (index.html) to render data inside of the web browser. Client-side routing is the technique used to give users the impression of navigating between multiple web pages, by fetching different data from the server and rendering different views in the same single HTML page. This process is done on the client using JavaScript. Client-side routing is how we describe which views are displayed on the web page at any given time.
 <br>
+
 React Router
+<br>
 Although the basic React library doesn't have the capability to handle client-side routing, there are other libraries available to handle this specific task. The most popular library for client-side routing is called React Router. Checkout the official documentation.
 <br>
+
 React Router allows us to use familiar routing patterns instead of writing complicated if-statements in JavaScript.
 <br>
+
 Implementing Client-Side Routing
 "Bank of React" Application
 To demonstrate the power of React Router and client-side routing, we are going to build a simple personal banking application called Bank of React, where we can independently display the Credits and Debits made to each bank account.
