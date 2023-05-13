@@ -9,7 +9,7 @@ import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
 
 const Credits = (props) => {
-  // Create the list of Debit items
+  // Create the list of Debit items()
   let creditsView = () => {
     const { credits } = props;
     return credits.map((credit) => {  // Extract "id", "amount", "description" and "date" properties of each debits JSON array element
