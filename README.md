@@ -6,6 +6,9 @@ Link to the GitHub repository: https://github.com/Jiahao0804/CSCI39548-Assignmen
 
 Link to the GitHub Pages website: 
 <br>
+
+Assignment link: https://gist.github.com/johnnylaicode/fa39c3ad74b6ee902fadf1cf35c54eb2
+<br>
 <br>
 
 GOAL
