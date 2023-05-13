@@ -87,10 +87,12 @@ class App extends Component {
     let total_credit = 0;
     let total_debit = 0;
 
+    // update total_credit after amount been insert
     credits.forEach((credit) => {
       total_credit = total_credit + credit.amount;
     })
 
+    // update total_debit after amount been insert
     debits.forEach((debit) => {
       total_debit = total_debit + debit.amount;
     })
