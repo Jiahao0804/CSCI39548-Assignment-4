@@ -4,7 +4,7 @@ Github username: Jiahao0804
 Link to the GitHub repository: https://github.com/Jiahao0804/CSCI39548-Assignment-4
 <br>
 
-Link to the GitHub Pages website: 
+Link to the GitHub Pages website: https://jiahao0804.github.io/CSCI39548-Assignment-4/
 <br>
 
 Assignment link: https://gist.github.com/johnnylaicode/fa39c3ad74b6ee902fadf1cf35c54eb2
