@@ -6,9 +6,13 @@ GOAL
 The goal is to offer students the opportunity to gain experience in React application development by:
 <br>
 Learning about client-side routing
+
 Adding client-side routing to React applications using React Router
+
 Setting up React Router to enable common browser behavior
+
 Utilizing built-in React Router components (Route, Router, Link, and Redirect)
+
 Working with common React features such as components, state, props, event handlers, etc.
 <br>
 Client-Side Routing
