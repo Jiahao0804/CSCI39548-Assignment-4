@@ -18,7 +18,7 @@ class App extends Component {
   constructor() {  // Create and initialize state
     super(); 
     this.state = {
-      accountBalance: 0,  // set the account balance to 0
+      accountBalance: 0,
       creditList: [],
       debitList: [],
       currentUser: {
@@ -35,86 +35,105 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
-  // Update creditList
+  // adding function addCredit and addDebit that update the state based on user input of new credits and debits
   addCredit = (e) => {
-    this.setState({creditList: this.state.creditList([{
-      amount: e.amount,
-      description: e.description,
-      date: e.date,
-    }])});
-
-    // update the account balance and set the decimal in 2 place
-    this.setState({accountBalance: (float(this.state.accountBalance) + float(e.amount)).toFixed(2)})
-  }
-
-  // Update debitList
-  addDebit = (e) => {
-    this.setState({debitList: this.state.debitList([{
-      amount: e.amount,
-      description: e.description,
-      date: e.date,
-    }])});
-
-    // update the account balance and set the decimal in 2 place
-    this.setState({accountBalance: (float(this.state.accountBalance) - float(e.amount)).toFixed(2)})
-  }
-
-  // get data from API
-  async componentDidMount()
-  {
-    //let credits = await axios.get("https://johnnylaicode.github.io/api/credits.json");
-    //let debits = await axios.get("https://johnnylaicode.github.io/api/debits.json");
-
-    try {
-      const creditsResponse = await fetch("https://johnnylaicode.github.io/api/credits.json");
-      const credits = await creditsResponse.json();
-      this.setState( { creditList: credits });
-
-      const debitsResponse = await fetch("https://johnnylaicode.github.io/api/debits.json");
-      const debits = await debitsResponse.json();
-      this.setState( { debitList: debits });
-
-      const credits = this.state.creditList;
-      const debits = this.state.debitList;
-
-      let total_credits = 0;
-      let total_debits = 0;
-
-      credits.forEach((credit) => {
-        total_credits = total_credits + credit.amount;
-      });
-
-      debits.forEach((debits) => {
-        total_debits = total_debits + debits.amount;
-      });
-
-      const Update_account_balance = (total_credits - total_debits).toFixed(2);
-
-      this.setState( { accountBalance: Update_account_balance });
-
-    }catch(error) {
-      console.error(error);
-    } 
+    e.preventDefault();
+    this.setState( { creditList: this.state.creditList.concat([{
+      description: e.target.elements.description.value,
+      amount: e.target.elements.amount.value,
+      date: new Date().toISOString().slice(0, 10),
+    }]) } );
     
-    // credits = credits.data;
-    // debits = debits.data;
+    // Update the accountBalance
+    this.setState( { accountBalance: (parseFloat(this.state.accountBalance) + parseFloat(e.target.elements.amount.value)).toFixed(2)});
 
-    /* let total_credits = 0;
-    let total_debits = 0;
+    console.log(this.creditList);
+    console.log(this.accountBalance);
+  }
+
+  addDebit = (e) => {
+    e.preventDefault();
+    this.setState( { debitList: this.state.debitList.concat([{
+      description: e.target.elements.description.value,
+      amount: e.target.elements.amount.value,
+      date: new Date().toISOString().slice(0, 10),
+    }]) } );
+    
+    // Update the accountBalance
+    this.setState( { accountBalance: (parseFloat(this.state.accountBalance) - parseFloat(e.target.elements.amount.value)).toFixed(2)});
+    
+    console.log(this.debitList);
+    console.log(this.accountBalance);
+  }
+
+  // need to load data from endpoint
+  componentDidMount() {
+    fetch('https://johnnylaicode.github.io/api/credits.json')
+    .then((response) => response.json())
+    .then(credits => {
+      this.setState( { creditList: credits });
+    });
+
+    fetch('https://johnnylaicode.github.io/api/debits.json')
+    .then((response) => response.json())
+    .then(debits => {
+      this.setState( { debitList: debits });
+    });
+
+    let credits = this.state.creditList;
+    let debits = this.state.debitList;
+
+    // initialize total_credit and total_debit to 0
+    let total_credit = 0;
+    let total_debit = 0;
 
     credits.forEach((credit) => {
-      total_credits = total_credits + credit.amount;
-    });
+      total_credit = total_credit + credit.amount;
+    })
 
-    debits.forEach((debits) => {
-      total_debits = total_debits + debits.amount;
-    });
+    debits.forEach((debit) => {
+      total_debit = total_debit + debit.amount;
+    })
 
-    let Update_account_balance = (total_credits - total_debits).toFixed(2);
-
-    this.setState({accountBalance: Update_account_balance});
-    */
+    // update the total account balance by subtract total_credit and total_debit
+    let total_account_balance = (total_credit - total_debit).toFixed(2);
+    this.setState( { accountBalance: total_account_balance } );
   }
+  /*
+  compoentDidMount() {
+    this.fetchCreditsData();
+    this.fetchDebitsData();
+  }
+
+  fetchCreditsData = () => {
+    fetch('https://johnnylaicode.github.io/api/credits.json')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState((prevState) => ({
+          creditList: [...prevState.creditList, ...data],
+          accountBalance: prevState.accountBalance + this.getTotalAmount(data),
+        }));
+      })
+      .catch((error) => console.log(error));
+  };
+
+  fetchDebitsData = () => {
+    fetch('https://johnnylaicode.github.io/api/debits.json')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState((prevState) => ({
+          debitList: [...prevState.debitList, ...data],
+          accountBalance: prevState.accountBalance - this.getTotalAmount(data),
+        }));
+      })
+      .catch((error) => console.log(error));
+  };
+
+  getTotalAmount = (data) => {
+    return data.reduce((total, item) => total + parseFloat(item.amount), 0);
+  };
+
+  }*/
 
   // Create Routes and React elements to be rendered using React components
   render() {  
