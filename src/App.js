@@ -67,26 +67,28 @@ class App extends Component {
   }
 
   // need to load data from endpoint
-  componentDidMount() {
-    fetch('https://johnnylaicode.github.io/api/credits.json')
+  async componentDidMount() {
+    // fetch takes time, wait for this function been finish then run the next function
+    await fetch('https://johnnylaicode.github.io/api/credits.json')
     .then((response) => response.json())
     .then(credits => {
       this.setState( { creditList: credits });
     });
 
-    fetch('https://johnnylaicode.github.io/api/debits.json')
+    await fetch('https://johnnylaicode.github.io/api/debits.json')
     .then((response) => response.json())
     .then(debits => {
       this.setState( { debitList: debits });
     });
 
+    // reassign the creditList and debitLists from the endpoint
     let credits = this.state.creditList;
     let debits = this.state.debitList;
 
     // initialize total_credit and total_debit to 0
     let total_credit = 0;
     let total_debit = 0;
-
+    
     // update total_credit after amount been insert
     credits.forEach((credit) => {
       total_credit = total_credit + credit.amount;
